@@ -80,7 +80,7 @@ export const useTodosApi = () => {
     }, []);
 
     const deleteTodo = useCallback(async (id) => {
-        Swal.fire({
+        return Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
             icon: 'warning',
@@ -106,7 +106,7 @@ export const useTodosApi = () => {
 
                 } catch (error) {
                     console.error("Failed to delete todo:", error);
-                    Swal.fire({
+                    return Swal.fire({
                         icon: 'error',
                         title: 'Error',
                         text: 'Failed to delete the todo.',
